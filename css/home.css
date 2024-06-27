@@ -1,19 +1,19 @@
 @import url('./global.css');
 
-.navbar-custom {
-  background-color: var(--variantOne) !important;
+.featured-product,
+.promotion {
+  margin-bottom: 30px;
 }
 
-.nav-link,
-.navbar-brand,
-.btn>a {
-  color: var(--baseColor) !important;
+.promotion {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
 }
 
-.btn:hover {
-  color: #120e0e !important;
-}
-
-a {
-  text-decoration: none !important;
+.about-us {
+  background-color: #f8f9fa;
+  padding: 50px;
+  margin-bottom: 30px;
 }

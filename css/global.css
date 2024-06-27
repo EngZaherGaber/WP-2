@@ -12,7 +12,49 @@
   font-family: "Open Sans", sans-serif;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .bg-main {
   background-color: var(--primaryColor) !important;
   color: white !important;
+}
+
+.text-main {
+  color: var(--primaryColor) !important;
+}
+
+.text-base {
+  color: var(--baseColor) !important;
+}
+
+.navbar-custom {
+  background-color: var(--variantOne) !important;
+}
+
+.nav-link,
+.navbar-brand,
+.btn>a {
+  color: var(--primaryColor) !important;
+}
+
+.btn {
+  border: solid 2px var(--baseColor) !important;
+  transition: all ease;
+}
+
+.btn:hover {
+  background-color: var(--baseColor) !important;
+}
+
+.btn:hover * {
+  color: var(--whiteColor) !important;
+}
+
+.footer {
+  background-color: #120e0e;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
