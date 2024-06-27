@@ -1,0 +1,19 @@
+@import url('./global.css');
+
+.navbar-custom {
+  background-color: var(--variantOne) !important;
+}
+
+.nav-link,
+.navbar-brand,
+.btn>a {
+  color: var(--baseColor) !important;
+}
+
+.btn:hover {
+  color: #120e0e !important;
+}
+
+a {
+  text-decoration: none !important;
+}

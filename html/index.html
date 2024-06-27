@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../css/home.css" />
     <!-- Bootstrap CDN's -->
     <link
       rel="stylesheet"
@@ -23,43 +24,55 @@
     ></script>
   </head>
   <body>
-    <button type="button" class="btn btn-danger" id="liveToastBtn">
-      Show live toast
-    </button>
-
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-      <div
-        id="liveToast"
-        class="toast"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
-        <div class="toast-header">
-          <img src="..." class="rounded me-2" alt="..." />
-          <strong class="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/logo.png" width="70" alt="Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Products</a>
+            </li>
+          </ul>
+          <form class="d-flex align-items-center">
+            <span class="navbar-text me-3">User Name</span>
+            <button class="btn btn-outline-light me-2" type="button">
+              <a class="link" href="login.html">Login</a>
+            </button>
+            <button class="btn btn-outline-light" type="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-cart"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 6H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 15H4a.5.5 0 0 1-.491-.408L1.01 2H.5a.5.5 0 0 1-.5-.5zM4.415 14h8.17l1.28-6.875-9.463-.375L4.415 14zm1.63-8l-1-5h7.961l-1 5H6.045z"
+                />
+              </svg>
+            </button>
+          </form>
         </div>
-        <div class="toast-body">Hello, world! This is a toast message.</div>
       </div>
-    </div>
+    </nav>
   </body>
-  <script>
-    const toastTrigger = document.getElementById('liveToastBtn');
-    const toastLiveExample = document.getElementById('liveToast');
-
-    if (toastTrigger) {
-      const toastBootstrap =
-        bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-      toastTrigger.addEventListener('click', () => {
-        toastBootstrap.show();
-      });
-    }
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.js"></script>
 </html>
