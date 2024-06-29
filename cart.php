@@ -27,7 +27,7 @@
     <!-- Navigation Menu -->
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Brand</a>
+        <a class="navbar-brand" href="index.php">Brand</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Products</a>

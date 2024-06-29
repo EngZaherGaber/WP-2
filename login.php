@@ -1,11 +1,29 @@
+<?php
+include('config.php');
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $stmt = $conn->prepare("SELECT email, password FROM users WHERE email =? AND password=?");
+  $stmt->execute([$email, $password]);
+  $count = $stmt->rowcount();
+  if ($count > 0) {
+    setcookie('user', $email, strtotime('+1 year'));
+    header("location:index.php");
+    exit();
+  } else {
+    $error = "<p>email or password is incorrect";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/login.css" />
-    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/global.css" />
     <!-- Bootstrap CDN's -->
     <link
       rel="stylesheet"
@@ -24,10 +42,11 @@
       crossorigin="anonymous"
     ></script>
   </head>
+  
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Brand</a>
+        <a class="navbar-brand" href="index.php">Brand</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -42,13 +61,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="products.html">Products</a>
+              <a class="nav-link active" href="products.php">Products</a>
             </li>
           </ul>
-          <form class="d-flex">
+          <form method="POST" action="login.php" class="d-flex">
             <button class="btn btn-outline-light me-2" type="button">
               Login
             </button>
@@ -57,7 +76,7 @@
               type="button"
               id="cart-button"
             >
-              <a href="cart.html"
+              <a href="cart.php"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -85,7 +104,8 @@
               <h3>Login</h3>
             </div>
             <div class="card-body">
-              <form action="login.php" method="post">
+              <!-- form -->
+              <form action="" method="post">
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>
                   <input
@@ -113,7 +133,12 @@
         </div>
       </div>
     </div>
+    <?php 
+        if (isset($error)) {
+            echo $error;
+          
+        } 
+        ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.js"></script>
   </body>
 </html>
