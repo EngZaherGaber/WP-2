@@ -1,0 +1,11 @@
+things done:
+  - frontend pages
+  - login
+  - logout
+  - cart at frontend (products stored in localStorage)
+  - Fetch products in products page
+  - add products via SQL statement
+  - DB Creation:
+  - Products table
+  - Users table
+  - Orders table
