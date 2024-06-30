@@ -165,12 +165,11 @@
   </div>
 </body>
 <script>
-  function getCookie(name) {
+  
+  const getCookie = (name) => {
     let cookieArr = document.cookie.split(";");
-
     for (let i = 0; i < cookieArr.length; i++) {
       let cookiePair = cookieArr[i].split("=");
-
       if (name === cookiePair[0].trim()) {
         return decodeURIComponent(cookiePair[1]);
       }
@@ -186,8 +185,7 @@
     if (userName) {
       document.getElementById('username-display').textContent = userName;
       loginLogoutLink.textContent = 'Logout';
-      loginLogoutLink.href = '#'; // Prevent default link behavior
-
+      loginLogoutLink.href = '#';
       loginLogoutButton.addEventListener('click', (e) => {
         e.preventDefault();
         var cookies = document.cookie.split("; ");

@@ -84,17 +84,12 @@
       <h2 class="mb-4">Our Products</h2>
       <div class="row">
         <?php
-        // Include your database connection configuration
         include('config.php');
 
         try {
-            // Query to fetch products from the database
             $query = "SELECT * FROM products";
             $stmt = $conn->query($query);
-
-            // Check if there are products in the database
             if ($stmt->rowCount() > 0) {
-                // Loop through each row (product) in the result set
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     ?>
                     <div class="col-md-4 product">
@@ -126,8 +121,6 @@
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
-
-        // Close the database connection
         $conn = null;
         ?>
     </div>
