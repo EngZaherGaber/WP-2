@@ -1,6 +1,7 @@
 <?php
+session_start();
 $servername = "localhost";
-$dbname = "wp-2";
+$dbname = "cart";
 $user = "root";
 $pass = "";
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $user, $pass);
